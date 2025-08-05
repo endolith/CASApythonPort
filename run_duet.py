@@ -35,8 +35,9 @@ assert fs1 == fs2, "Sampling rates must be the same"
 
 fs = fs1
 
-x1 = x1/np.iinfo(x1.dtype).max  # Dividing by maximum to normalise
-x2 = x2/np.iinfo(x2.dtype).max  # Dividing by maximum to normalise
+# Normalise the audio to the range [-1, 1]
+x1 = x1/np.iinfo(x1.dtype).max
+x2 = x2/np.iinfo(x2.dtype).max
 
 tf1 = tfanalysis(x1, awin, timestep, numfreq)  # time-freq domain
 tf2 = tfanalysis(x2, awin, timestep, numfreq)  # time-freq domain
