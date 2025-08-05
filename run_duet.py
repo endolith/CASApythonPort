@@ -20,8 +20,8 @@ np.set_printoptions(threshold=np.nan)
 # 1) Create the spectrogram of the Left and Right channels.
 
 # constants used
-pi = 3.14159265359
-eps = 2.2204e-16
+pi = np.pi
+eps = np.finfo(np.float32).eps  # 1.1920929e-07 but original code uses 2.2204e-16
 wlen = 1024
 timestep = 512
 numfreq = 1024
