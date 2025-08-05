@@ -48,7 +48,7 @@ tf2 = np.asmatrix(tf2)
 # removing DC component
 tf1 = tf1[1:, :]
 tf2 = tf2[1:, :]
-# eps is the a small constant to avoid dividing by zero frequency in the delay estimation
+# eps is a small constant to avoid dividing by zero frequency in the delay estimation
 
 # calculate pos/neg frequencies for later use in delay calc ??
 
