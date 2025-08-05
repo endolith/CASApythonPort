@@ -27,14 +27,14 @@ timestep = 512
 numfreq = 1024
 
 
-# analysis window is a Hamming window Looks like Sine on [0,pi]
+# Analysis window is a Hamming window. Looks like Sine on [0,pi]
 awin = np.hamming(wlen)
-x1 = read('data/x1_reverb.wav')
-x2 = read('data/x2_reverb.wav')
+x1, fs1 = read('data/x1_reverb.wav')
+x2, fs2 = read('data/x2_reverb.wav')
+assert fs1 == fs2, "Sampling rates must be the same"
 
-fs = x1[0]  # Obtain sampling rate
-x1 = x1[1]
-x2 = x2[1]
+fs = fs1
+
 x1 = x1/np.iinfo(x1.dtype).max  # Dividing by maximum to normalise
 x2 = x2/np.iinfo(x2.dtype).max  # Dividing by maximum to normalise
 
